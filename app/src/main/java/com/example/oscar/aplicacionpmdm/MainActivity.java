@@ -75,8 +75,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 resultCode == RESULT_OK) {
             ArrayList<String> matches = data
                     .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            resultList.setAdapter(new ArrayAdapter<String>(this,
-                    android.R.layout.simple_list_item_1, matches));
+            editText.setText(matches.get(0));
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
